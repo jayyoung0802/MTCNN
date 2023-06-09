@@ -1,2 +1,0 @@
-model_checkpoint_path: "/mnt_ssd/anp/mtcnn-paper/tmp/model/rnet/rnet-30"
-all_model_checkpoint_paths: "/mnt_ssd/anp/mtcnn-paper/tmp/model/rnet/rnet-30"

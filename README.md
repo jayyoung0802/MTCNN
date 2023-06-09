@@ -1,4 +1,4 @@
-# Mtcnn-org
+# Mtcnn
 MTCNN tensorflow版本复现源码，在FDDB上测试TPR94.9%，FP不到1300.
 
 

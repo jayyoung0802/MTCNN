@@ -11,15 +11,12 @@ import os
 import numpy as np 
 
 
-
-
 test_mode = "ONet"
 thresh = [0.1, 0.15, 0.6]
 min_face_size = 24
 stride = 2
 detectors = [None, None, None]
-#prefix = ['./tmp/model/pnet/pnet', './tmp/model/rnet/rnet', './tmp/model/onet/onet']
-prefix = ['./tmp/model/pnet/pnet', './tmp/model/rnet/rnet', './tmp/model-refine/onet/onet']
+prefix = ['./tmp/model/pnet/pnet', './tmp/model/rnet/rnet', './tmp/model/onet/onet']
 epoch = [30, 30, 2]
 batch_size = [2048, 64, 16]
 model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)]
@@ -41,7 +38,7 @@ if test_mode == "ONet":
 mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                stride=stride, threshold=thresh)
 
-test="./20020826bigimg_532.jpg"
+test="./test.jpg"
 im = cv2.imread(test)
 all_boxes,landmarks = mtcnn_detector.detect_one_image(im)
 
@@ -58,4 +55,4 @@ for bbox in all_boxes[count]:
 # cv2.imshow("test",image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
-cv2.imwrite('test3.png',image)
+cv2.imwrite('test-1.png',image)
